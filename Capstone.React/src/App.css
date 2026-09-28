@@ -1,0 +1,860 @@
+﻿/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #f4f7fb;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1e293b;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+    button:disabled {
+        cursor: not-allowed;
+    }
+
+
+/* =====================================================
+   MAIN APP / DASHBOARD
+===================================================== */
+
+.dashboard {
+    min-height: 100vh;
+    background: #f4f7fb;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.dashboard-header {
+    width: 100%;
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px 7%;
+    color: #ffffff;
+    background: linear-gradient(135deg, #172b4d, #243b5a);
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.12);
+}
+
+    .dashboard-header h1 {
+        margin: 0;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+    }
+
+    .dashboard-header p {
+        margin: 7px 0 0;
+        font-size: 16px;
+        opacity: 0.9;
+    }
+
+    .dashboard-header button {
+        border: none;
+        border-radius: 8px;
+        padding: 11px 24px;
+        background: #ffffff;
+        color: #172b4d;
+        font-size: 15px;
+        font-weight: 600;
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+        .dashboard-header button:hover {
+            background: #e8eef7;
+            transform: translateY(-1px);
+        }
+
+
+/* =====================================================
+   DASHBOARD CONTENT
+===================================================== */
+
+.dashboard-content {
+    width: min(1200px, 86%);
+    margin: 0 auto;
+    padding: 55px 0 80px;
+}
+
+    .dashboard-content h2 {
+        margin: 0 0 12px;
+        color: #172b4d;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .dashboard-content > div > p {
+        margin: 8px 0;
+        color: #475569;
+        font-size: 16px;
+    }
+
+
+/* =====================================================
+   DASHBOARD CARDS
+===================================================== */
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin-top: 38px;
+}
+
+.dashboard-card {
+    position: relative;
+    min-height: 175px;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+    .dashboard-card:hover {
+        border-color: #cbd5e1;
+        box-shadow: 0 12px 25px rgba(15, 23, 42, 0.1);
+        transform: translateY(-5px);
+    }
+
+    .dashboard-card h3 {
+        margin: 0 0 18px;
+        color: #172b4d;
+        font-size: 21px;
+    }
+
+    .dashboard-card p {
+        margin: 0;
+        color: #64748b;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .dashboard-card.clickable {
+        cursor: pointer;
+    }
+
+        .dashboard-card.clickable::after {
+            content: "→";
+            position: absolute;
+            right: 25px;
+            bottom: 23px;
+            color: #2563eb;
+            font-size: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .dashboard-card.clickable:hover::after {
+            transform: translateX(5px);
+        }
+
+
+/* =====================================================
+   LOGIN PAGE
+===================================================== */
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 30px;
+    background: radial-gradient(circle at top left, #dbeafe, transparent 35%), #f4f7fb;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 430px;
+    padding: 42px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1);
+}
+
+    .login-box h1 {
+        margin: 0;
+        color: #172b4d;
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .login-box > p {
+        margin: 10px 0 32px;
+        color: #64748b;
+        text-align: center;
+    }
+
+
+/* =====================================================
+   FORMS
+===================================================== */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #334155;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px 14px;
+        color: #1e293b;
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 15px;
+        outline: none;
+        resize: vertical;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group input:disabled {
+            color: #64748b;
+            background: #f1f5f9;
+            cursor: not-allowed;
+        }
+
+
+/* =====================================================
+   PRIMARY BUTTONS
+===================================================== */
+
+.login-box button[type="submit"],
+.request-form button[type="submit"] {
+    width: 100%;
+    padding: 13px 20px;
+    color: #ffffff;
+    background: #2563eb;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+    .login-box button[type="submit"]:hover,
+    .request-form button[type="submit"]:hover {
+        background: #1d4ed8;
+        transform: translateY(-1px);
+    }
+
+    .login-box button[type="submit"]:disabled,
+    .request-form button[type="submit"]:disabled {
+        opacity: 0.65;
+        transform: none;
+    }
+
+
+/* =====================================================
+   REQUEST FORM PAGE
+===================================================== */
+
+.request-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 35px 40px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+}
+
+    .request-container h2 {
+        margin: 20px 0 30px;
+        color: #172b4d;
+    }
+
+
+/* =====================================================
+   BACK / CANCEL BUTTONS
+===================================================== */
+
+.back-button {
+    padding: 5px 0;
+    color: #2563eb;
+    background: transparent;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+    .back-button:hover {
+        color: #1d4ed8;
+        text-decoration: underline;
+    }
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+    .button-group button {
+        flex: 1;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .button-group .cancel-button {
+        color: #334155;
+        background: #e2e8f0;
+    }
+
+        .button-group .cancel-button:hover {
+            background: #cbd5e1;
+        }
+
+
+/* =====================================================
+   MESSAGES
+===================================================== */
+
+.success-message,
+.error-message {
+    margin-top: 20px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.success-message {
+    color: #047857;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+}
+
+.error-message {
+    color: #b91c1c;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+}
+
+
+/* =====================================================
+   REQUESTS PAGE
+===================================================== */
+
+.requests-page {
+    width: 100%;
+}
+
+    .requests-page h2 {
+        margin: 20px 0 24px;
+        color: #172b4d;
+        font-size: 30px;
+    }
+
+
+/* =====================================================
+   ADD NEW REQUEST BUTTON
+===================================================== */
+
+.add-request-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 20px;
+    padding: 11px 20px;
+    color: #ffffff;
+    background: #2563eb;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(37, 99, 235, 0.25);
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+    .add-request-button:hover {
+        background: #1d4ed8;
+        box-shadow: 0 5px 12px rgba(37, 99, 235, 0.3);
+        transform: translateY(-1px);
+    }
+
+    .add-request-button:active {
+        transform: translateY(0);
+    }
+
+
+/* =====================================================
+   SEARCH
+   Works with the current JSX even without extra classes.
+===================================================== */
+
+.search-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+    .search-container input,
+    .search-input {
+        width: min(280px, 100%);
+        padding: 11px 14px;
+        color: #16324f;
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 15px;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .search-container input::placeholder,
+        .search-input::placeholder {
+            color: #94a3b8;
+        }
+
+        .search-container input:focus,
+        .search-input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+    .search-container button,
+    .search-button,
+    .clear-button {
+        padding: 11px 18px;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
+        transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+        .search-container button:not(.cancel-button):not(.clear-button),
+        .search-button {
+            color: #ffffff;
+            background: #2563eb;
+            border: none;
+        }
+
+            .search-container button:not(.cancel-button):not(.clear-button):hover,
+            .search-button:hover {
+                background: #1d4ed8;
+                transform: translateY(-1px);
+            }
+
+    .search-container .cancel-button,
+    .clear-button {
+        color: #334155;
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+    }
+
+        .search-container .cancel-button:hover,
+        .clear-button:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+
+
+/* =====================================================
+   SERVICE REQUEST TABLE
+===================================================== */
+
+.table-container {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 2px;
+    background: #ffffff;
+    border: 1px solid #dbe3ef;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.08);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-color: #94a3b8 #e2e8f0;
+    scrollbar-width: thin;
+}
+
+    .table-container::-webkit-scrollbar {
+        height: 11px;
+    }
+
+    .table-container::-webkit-scrollbar-track {
+        background: #e2e8f0;
+        border-radius: 0 0 12px 12px;
+    }
+
+    .table-container::-webkit-scrollbar-thumb {
+        background: #94a3b8;
+        border: 3px solid #e2e8f0;
+        border-radius: 8px;
+    }
+
+        .table-container::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+
+    .table-container table,
+    .requests-table {
+        width: 100%;
+        min-width: 1050px;
+        border-collapse: separate;
+        border-spacing: 0;
+        table-layout: auto;
+    }
+
+        .table-container th,
+        .requests-table thead th {
+            padding: 15px 14px;
+            color: #ffffff;
+            background: #243b53;
+            border-bottom: 1px solid #1e3349;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: left;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+            .table-container th:first-child,
+            .requests-table thead th:first-child {
+                border-top-left-radius: 11px;
+            }
+
+            .table-container th:last-child,
+            .requests-table thead th:last-child {
+                border-top-right-radius: 11px;
+            }
+
+        .table-container td,
+        .requests-table tbody td {
+            padding: 16px 14px;
+            color: #16324f;
+            background: #ffffff;
+            border-bottom: 1px solid #e5eaf0;
+            font-size: 14px;
+            line-height: 1.45;
+            vertical-align: middle;
+        }
+
+        .table-container tbody tr:hover td,
+        .requests-table tbody tr:hover td {
+            background: #f8fafc;
+        }
+
+        .table-container tbody tr:last-child td,
+        .requests-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Request ID */
+        .table-container th:nth-child(1),
+        .table-container td:nth-child(1),
+        .requests-table th:nth-child(1),
+        .requests-table td:nth-child(1) {
+            width: 95px;
+            min-width: 95px;
+            white-space: nowrap;
+        }
+
+        /* Description */
+        .table-container th:nth-child(2),
+        .table-container td:nth-child(2),
+        .requests-table th:nth-child(2),
+        .requests-table td:nth-child(2) {
+            min-width: 165px;
+        }
+
+        /* Details */
+        .table-container th:nth-child(3),
+        .table-container td:nth-child(3),
+        .requests-table th:nth-child(3),
+        .requests-table td:nth-child(3) {
+            min-width: 210px;
+        }
+
+        /* Raised By */
+        .table-container th:nth-child(4),
+        .table-container td:nth-child(4),
+        .requests-table th:nth-child(4),
+        .requests-table td:nth-child(4) {
+            min-width: 115px;
+        }
+
+        /* Raised On */
+        .table-container th:nth-child(5),
+        .table-container td:nth-child(5),
+        .requests-table th:nth-child(5),
+        .requests-table td:nth-child(5) {
+            min-width: 160px;
+            white-space: nowrap;
+        }
+
+        /* Justification */
+        .table-container th:nth-child(6),
+        .table-container td:nth-child(6),
+        .requests-table th:nth-child(6),
+        .requests-table td:nth-child(6) {
+            min-width: 175px;
+        }
+
+        /* Status */
+        .table-container th:nth-child(7),
+        .table-container td:nth-child(7),
+        .requests-table th:nth-child(7),
+        .requests-table td:nth-child(7) {
+            min-width: 105px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        /*
+   Action stays visible while horizontally scrolling.
+   It also has enough width so its header and button cannot be cut off.
+*/
+        .table-container th:last-child,
+        .table-container td:last-child,
+        .requests-table th:last-child,
+        .requests-table td:last-child {
+            position: sticky;
+            right: 0;
+            z-index: 2;
+            width: 125px;
+            min-width: 125px;
+            padding-right: 18px;
+            padding-left: 18px;
+            text-align: center;
+            white-space: nowrap;
+            box-shadow: -5px 0 10px rgba(15, 23, 42, 0.06);
+        }
+
+        .table-container th:last-child,
+        .requests-table th:last-child {
+            z-index: 3;
+            background: #243b53;
+        }
+
+        .table-container td:last-child,
+        .requests-table td:last-child {
+            background: #ffffff;
+        }
+
+        .table-container tbody tr:hover td:last-child,
+        .requests-table tbody tr:hover td:last-child {
+            background: #f8fafc;
+        }
+
+        .table-container td:last-child button,
+        .requests-table td:last-child button {
+            margin: 2px;
+            white-space: nowrap;
+        }
+
+
+        /* =====================================================
+   TABLE ACTION BUTTONS
+===================================================== */
+
+        .table-container td button,
+        .requests-table td button,
+        .delete-button,
+        .reopen-button {
+            padding: 8px 14px;
+            color: #ffffff;
+            background: #2563eb;
+            border: none;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+            .table-container td button:hover,
+            .requests-table td button:hover,
+            .delete-button:hover,
+            .reopen-button:hover {
+                background: #1d4ed8;
+                transform: translateY(-1px);
+            }
+
+            .table-container td button:disabled,
+            .requests-table td button:disabled {
+                opacity: 0.6;
+                transform: none;
+            }
+
+.reopen-button {
+    margin-top: 5px;
+}
+
+
+/* =====================================================
+   TABLE TEXT / STATUS
+===================================================== */
+
+.text-cell {
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.date-cell {
+    white-space: nowrap;
+}
+
+.status-open,
+.status-closed {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-open {
+    color: #166534;
+    background: #dcfce7;
+}
+
+.status-closed {
+    color: #991b1b;
+    background: #fee2e2;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        min-height: 90px;
+        padding: 20px 5%;
+    }
+
+        .dashboard-header h1 {
+            font-size: 25px;
+        }
+
+        .dashboard-header p {
+            font-size: 14px;
+        }
+
+        .dashboard-header button {
+            padding: 9px 16px;
+        }
+
+    .dashboard-content {
+        width: 90%;
+        padding: 35px 0 60px;
+    }
+
+        .dashboard-content h2,
+        .requests-page h2 {
+            font-size: 25px;
+        }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .dashboard-card {
+        min-height: 150px;
+    }
+
+    .login-box {
+        padding: 30px 25px;
+    }
+
+        .login-box h1 {
+            font-size: 30px;
+        }
+
+    .request-container {
+        padding: 25px 20px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .table-container {
+        margin-top: 14px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+        .dashboard-header button {
+            font-size: 13px;
+        }
+
+    .dashboard-content {
+        width: 92%;
+    }
+
+    .login-container {
+        padding: 15px;
+    }
+
+    .login-box {
+        padding: 25px 20px;
+    }
+
+    .search-container {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+        .search-container input,
+        .search-input,
+        .search-container button,
+        .search-button,
+        .clear-button {
+            width: 100%;
+        }
+}

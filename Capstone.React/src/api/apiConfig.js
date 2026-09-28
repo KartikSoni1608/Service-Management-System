@@ -1,0 +1,1 @@
+export const API_URL = "http://192.168.29.212:5192/api/ITSRPAPI";
